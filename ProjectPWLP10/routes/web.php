@@ -14,7 +14,7 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('welcome');
 });
 
@@ -22,3 +22,5 @@ Route::resource('articles', ArticleController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
